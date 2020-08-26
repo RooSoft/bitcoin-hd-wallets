@@ -22,3 +22,7 @@ BIP32 Root Key:    xprv9s21ZrQH143K4WKnR9kVTtR7xdszY89qRTzxNXeVNbxEgppW8XE2xbpop
 xpub:              xpub661MyMwAqRbcGzQFXBHVq2MrWfiUwasgngvZAv46vwVDZd9eg4YHWQ9HgC6xyTenAapgXv86ywjXaBbMwdeEQm5RL7tSBPQXTBGQvU4JM69
 m/84'/0'/0'/0/0    bc1qr370xugpkxhyrqtxncdcmgc303efnm00fg4fu8 L4Wv2cUaGtoCFyLDBVHzd8YfXxERte6GaxqgzV9Ciy8LWCp3rCoc
 ```
+
+## Inspiration
+
+Based on [modood/btckeygen](https://github.com/modood/btckeygen)
