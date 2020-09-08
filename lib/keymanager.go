@@ -213,9 +213,5 @@ func (km *KeyManager) GetKey(purpose, coinType, account, change, index uint32) (
 
 	km.setKey(path, key)
 
-	fmt.Printf("Generated private key for %s\n", path)
-	fmt.Printf("Private key: %x\n", key.Key)
-	fmt.Printf("Public key: %x\n", key.PublicKey().Key)
-
 	return &Key{path: path, bip32Key: key}, nil
 }

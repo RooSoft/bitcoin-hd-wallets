@@ -18,18 +18,18 @@ func init() {
 }
 
 // GetChild returns the seed
-func GetChild() (string, string, string) {
+func GetChild(purpose, coinType, account, change, index uint32) (string, string, string, string, string) {
 	compress := true // generate a compressed public key
 
-	key, err := km.GetKey(lib.PurposeBIP49, lib.CoinTypeBTC, 0, 0, uint32(0))
+	key, err := km.GetKey(purpose, coinType, account, change, index)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	wif, _, segwitBech32, _, err := key.Encode(compress)
+	wif, address, segwitBech32, segwitNested, err := key.Encode(compress)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	return key.GetPath(), segwitBech32, wif
+	return key.GetPath(), address, segwitBech32, segwitNested, wif
 }
