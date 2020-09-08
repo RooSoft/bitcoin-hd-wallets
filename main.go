@@ -71,11 +71,12 @@ func main() {
 
 	fmt.Printf("\n\n1. Seed\n")
 	fmt.Printf("-------\n")
-	fmt.Printf("%-10s %x\n", "seed", seed.GetSeed())
-	fmt.Printf("%-10s %s\n", "mnemonic", seed.GetMnemonic())
+	fmt.Printf("%-9s %x\n", "seed", seed.GetSeed())
+	fmt.Printf("%-9s %s\n", "mnemonic", seed.GetMnemonic())
 
 	fmt.Printf("\n\n2. Master key\n")
 	fmt.Printf("-------------\n")
-	fmt.Printf("%-20s %x\n", "master private key:", masterkey.GetKey())
-	fmt.Printf("%-20s %x\n", "chain code:", masterkey.GetChainCode())
+	fmt.Printf("%-12s %x\n", "private key", masterkey.GetPrivateKey())
+	fmt.Printf("%-12s %x\n", "chain code", masterkey.GetChainCode())
+	fmt.Printf("%-12s %x\n", "public key", masterkey.GetPublicKey())
 }

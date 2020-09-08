@@ -11,11 +11,12 @@ var km *lib.KeyManager
 var masterkey *bip32.Key
 
 func init() {
-	pass := "PASSWORD"
+	passphrase := ""
+	mnemonic := "glow laugh acquire menu anchor evil occur put hover renew calm purpose"
 
 	var err error
 
-	km, err = lib.NewKeyManager(256, pass)
+	km, err = lib.NewKeyManagerFromMnemonic(mnemonic, passphrase)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -26,9 +27,14 @@ func init() {
 	}
 }
 
-// GetKey returns the private key
-func GetKey() []byte {
+// GetPrivateKey returns the private key
+func GetPrivateKey() []byte {
 	return masterkey.Key
+}
+
+// GetPublicKey returns the public key
+func GetPublicKey() []byte {
+	return masterkey.PublicKey().Key
 }
 
 // GetChainCode returns the extended private key's chain code

@@ -9,11 +9,12 @@ import (
 var km *lib.KeyManager
 
 func init() {
-	pass := "PASSWORD"
+	passphrase := ""
+	mnemonic := "glow laugh acquire menu anchor evil occur put hover renew calm purpose"
 
 	var err error
 
-	km, err = lib.NewKeyManager(256, pass)
+	km, err = lib.NewKeyManagerFromMnemonic(mnemonic, passphrase)
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -42,6 +42,16 @@ func NewKeyManager(bitSize int, passphrase string) (*KeyManager, error) {
 	return km, nil
 }
 
+// NewKeyManagerFromMnemonic return new key manager from mnemonic
+func NewKeyManagerFromMnemonic(mnemonic string, passphrase string) (*KeyManager, error) {
+	km := &KeyManager{
+		mnemonic:   mnemonic,
+		passphrase: passphrase,
+		keys:       make(map[string]*bip32.Key, 0),
+	}
+	return km, nil
+}
+
 func (km *KeyManager) GetMnemonic() string {
 	return km.mnemonic
 }
