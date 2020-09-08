@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 
+	seed "git.roosoft.com/bitcoin/hd-wallets/1-seed"
 	"git.roosoft.com/bitcoin/hd-wallets/lib"
 )
 
@@ -50,6 +51,9 @@ func main() {
 	fmt.Printf("%-18s %x\n", "BIP39 Seed:", km.GetSeed())
 	fmt.Printf("%-18s %s\n", "BIP32 Root Key:", masterKey.B58Serialize())
 
+	fmt.Printf("%-18s %x\n", "BIP32 key:", masterKey.Key)
+	fmt.Printf("%-18s %x\n", "BIP32 chain code:", masterKey.ChainCode)
+
 	publicKey := masterKey.PublicKey()
 	fmt.Printf("%-18s %s\n", "xpub:", publicKey.String())
 
@@ -63,5 +67,12 @@ func main() {
 	}
 
 	fmt.Printf("%-18s %s %s\n", key.GetPath(), segwitBech32, wif)
+
+	/// see https://learnmeabitcoin.com/technical/hd-wallets
+
+	fmt.Printf("\n\n1. Seed\n")
+	fmt.Printf("-------\n")
+	fmt.Printf("%-10s %x\n", "seed", seed.GetSeed())
+	fmt.Printf("%-10s %s\n", "mnemonic", seed.GetMnemonic())
 
 }

@@ -26,3 +26,16 @@ m/84'/0'/0'/0/0    bc1qr370xugpkxhyrqtxncdcmgc303efnm00fg4fu8 L4Wv2cUaGtoCFyLDBV
 ## Inspiration
 
 Based on [modood/btckeygen](https://github.com/modood/btckeygen)
+
+
+
+
+
+
+seed
+  f25bf8f4b0fb2c8f38768f8e419dcddfa5c3ce3bb4e9423869ed283aae4572a7
+  83bc1e33f53dfb6424a765bd050b4b3ac4f8552babbab3376a12de987fd56b13
+
+seed -> hmac   ---->   master private key
+key        f8a7b2614be187565f87576f561f6870179ff8069bac0875a96f2e745d14cb2d
+chaincode  11c5213cdfb6d89339c2c544a808569052c13957ae38c987a81de1a4c5e91480
