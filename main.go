@@ -5,26 +5,12 @@ import (
 
 	seed "git.roosoft.com/bitcoin/hd-wallets/1-seed"
 	masterkey "git.roosoft.com/bitcoin/hd-wallets/2-masterPrivateKey"
+	childkeys "git.roosoft.com/bitcoin/hd-wallets/3-childKeys"
 )
 
 // // CoinType SLIP-0044 : Registered coin types for BIP-0044
 // // https://github.com/satoshilabs/slips/blob/master/slip-0044.md
 // type CoinType = uint32
-
-// const (
-// 	CoinTypeBTC CoinType = 0x80000000
-// 	CoinTypeLTC CoinType = 0x80000002
-// 	CoinTypeETH CoinType = 0x8000003c
-// 	CoinTypeEOS CoinType = 0x800000c2
-// )
-
-// type Purpose = uint32
-
-// const (
-// 	PurposeBIP44 Purpose = 0x8000002C // 44' BIP44
-// 	PurposeBIP49 Purpose = 0x80000031 // 49' BIP49
-// 	PurposeBIP84 Purpose = 0x80000054 // 84' BIP84
-// )
 
 func main() {
 	// pass := "PASSWORD"
@@ -79,4 +65,11 @@ func main() {
 	fmt.Printf("%-12s %x\n", "private key", masterkey.GetPrivateKey())
 	fmt.Printf("%-12s %x\n", "chain code", masterkey.GetChainCode())
 	fmt.Printf("%-12s %x\n", "public key", masterkey.GetPublicKey())
+
+	fmt.Printf("\n\n3. Child keys\n")
+	fmt.Printf("-------------\n")
+
+	path, segwit32, wif := childkeys.GetChild()
+
+	fmt.Println(path, segwit32, wif)
 }

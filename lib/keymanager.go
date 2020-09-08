@@ -196,7 +196,7 @@ func (km *KeyManager) GetChangeKey(purpose, coinType, account, change uint32) (*
 func (km *KeyManager) GetKey(purpose, coinType, account, change, index uint32) (*Key, error) {
 	path := fmt.Sprintf(`m/%d'/%d'/%d'/%d/%d`, purpose-Apostrophe, coinType-Apostrophe, account, change, index)
 
-	key, ok := km.getKey(path)
+	key, ok := km.getKey("0")
 	if ok {
 		return &Key{path: path, bip32Key: key}, nil
 	}
@@ -212,6 +212,10 @@ func (km *KeyManager) GetKey(purpose, coinType, account, change, index uint32) (
 	}
 
 	km.setKey(path, key)
+
+	fmt.Printf("Generated private key for %s\n", path)
+	fmt.Printf("Private key: %x\n", key.Key)
+	fmt.Printf("Public key: %x\n", key.PublicKey().Key)
 
 	return &Key{path: path, bip32Key: key}, nil
 }
