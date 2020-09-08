@@ -71,8 +71,8 @@ func main() {
 
 	fmt.Printf("\n\n1. Seed\n")
 	fmt.Printf("-------\n")
-	fmt.Printf("%-9s %x\n", "seed", seed.GetSeed())
 	fmt.Printf("%-9s %s\n", "mnemonic", seed.GetMnemonic())
+	fmt.Printf("%-9s %x\n", "seed", seed.GetSeed())
 
 	fmt.Printf("\n\n2. Master key\n")
 	fmt.Printf("-------------\n")

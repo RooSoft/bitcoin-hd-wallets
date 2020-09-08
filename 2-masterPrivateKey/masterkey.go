@@ -11,12 +11,9 @@ var km *lib.KeyManager
 var masterkey *bip32.Key
 
 func init() {
-	passphrase := ""
-	mnemonic := "glow laugh acquire menu anchor evil occur put hover renew calm purpose"
-
 	var err error
 
-	km, err = lib.NewKeyManagerFromMnemonic(mnemonic, passphrase)
+	km, err = lib.NewKeyManagerFromMnemonic(lib.Mnemonic, lib.Passphrase)
 	if err != nil {
 		log.Fatal(err)
 	}
